@@ -1,0 +1,4 @@
+Note:  This file enlists al the softwares required for this project.
+
+1. django
+2. whitenoise: for serving static files in production environment
