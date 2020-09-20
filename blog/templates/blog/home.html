@@ -1,52 +1,30 @@
 {% extends "blog/base.html" %}
 {% block body1 %}
-    <nav class="navbar navbar-expand-lg" style="background-color: black;">
-        <div class="container">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active ml-5">
-                    <a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light " href="#">MyProfile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light " href="#">Logout</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-        </div>
-    </nav>
-
     {% for post in posts %}
-    <div style="margin:10px;padding:auto;">
-        <div class="card mx-auto"  style="width:500px">
-            <div class="container">
-                <div class="row">
-                  <div class="col-sm-3" style="background-color:black;">
-                    <img class="card-img-top rounded-circle" src="" alt="Card image"/>
-                  </div>
-                  <div class="col-sm-9" style="background-color:black;">
-                    <p>
-                        <span class="h4 font-weight-bold">{{post.author}}</span><br>
-                        <span class = "text-muted">Dated {{post.date|date:"F d, Y"}}</span>
+        <div style="margin:10px;padding:auto;">
+            <div class="card mx-auto"  style="width:500px">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-sm-3" style="background-color:black;">
+                        <img class="card-img-top rounded-circle" src="" alt="Card image"/>
+                    </div>
+                    <div class="col-sm-9" style="background-color:black;">
+                        <p>
+                            <span class="h4 font-weight-bold">{{post.author}}</span><br>
+                            <span class = "text-muted">Dated {{post.date|date:"F d, Y"}}</span>
+                        </p>
+                    </div>
+                    </div>
+                </div>            
+                <div class="card-body text-dark">
+                    {% if post.title %}
+                        <div class="card-title h5 font-weight-bold">{{post.title}}</div>
+                    {% endif %}
+                    <p class="card-text">
+                        {{post.content}}
                     </p>
-                  </div>
                 </div>
-            </div>            
-            <div class="card-body text-dark">
-                {% if post.title %}
-                    <div class="card-title h5 font-weight-bold">{{post.title}}</div>
-                {% endif %}
-                <p class="card-text">
-                    {{post.content}}
-                </p>
             </div>
         </div>
-    </div>
     {% endfor %}
 {% endblock body1 %}

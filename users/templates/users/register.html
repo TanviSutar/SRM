@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block body1 %}
+    <div class="card mt-5 mx-auto bg-dark" style="width: 25rem;">
+        <div class="card-body">
+            <h5 class="card-title">Welcome to BlogBuzz</h5>
+            <p class="card-text">
+                <form method='POST'>
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        {{form|crispy}}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                    </div>
+                </form>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        Already a memeber??
+                        <a href="#" class="ml-2">Sign In</a>
+                    </small>
+                </div>
+            </p>
+        </div>
+    </div>
+    
+{% endblock body1 %}
