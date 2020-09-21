@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
 {% block body1 %}
-    <div class="card mt-5 mx-auto bg-dark" style="width: 25rem;">
+    <div class="card mt-5 mx-auto bg-dark" style="width: 40rem;">
         <div class="card-body">
             <h5 class="card-title">Welcome to BlogBuzz</h5>
             <p class="card-text">
@@ -17,7 +17,7 @@
                 <div class="border-top pt-3">
                     <small class="text-muted">
                         Already a memeber??
-                        <a href="#" class="ml-2">Sign In</a>
+                        <a href="{% url 'login' %}" class="ml-2">Sign In here</a>
                     </small>
                 </div>
             </p>

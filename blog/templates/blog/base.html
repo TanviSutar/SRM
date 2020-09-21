@@ -14,29 +14,40 @@
         {% if title %}
             <title>{{title}} </title>
         {% else %}
-            <title>BlogPro</title>
+            <title>BlogBuzz</title>
         {% endif %}
     </head>
     <body>  
         <nav class="navbar navbar-expand-lg" style="background-color: black;">
             <div class="container">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active ml-5">
-                        <a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light " href="#">MyProfile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light " href="#">Logout</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    {% if user.is_authenticated %}
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active ml-5">
+                                <a class="nav-link text-light" href="{% url 'blog_home' %}">Home<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="{% url 'profile' %}">MyProfile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    {% else %}
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active ml-5">
+                                <a class="nav-link text-light" href="{% url 'login' %}">Login<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="{% url 'register' %}">Register</a>
+                            </li>
+                        </ul>
+                    {% endif %}
+                </div>
             </div>
         </nav>
         
