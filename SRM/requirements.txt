@@ -1,4 +1,4 @@
 Note:  This file enlists al the softwares required for this project.
 
 1. django
-2. whitenoise: for serving static files in production environment
+2. crispy forms: also to be added to installed_apps list in settings.py file

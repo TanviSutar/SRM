@@ -128,7 +128,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/main')
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4' #informing crispy forms to use bootstrap version 4
 
 LOGIN_REDIRECT_URL = 'blog_home'
 
