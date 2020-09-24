@@ -128,6 +128,9 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/main')
 
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4' #informing crispy forms to use bootstrap version 4
 
 LOGIN_REDIRECT_URL = 'blog_home'

@@ -2,3 +2,4 @@ Note:  This file enlists al the softwares required for this project.
 
 1. django
 2. crispy forms: also to be added to installed_apps list in settings.py file
+3. pillow: for profile images

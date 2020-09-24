@@ -1,4 +1,52 @@
 {% extends 'blog/base.html' %}
 {% block body1 %}
-<h2>{{user.username}}</h2>
+    <div style="margin:10px;padding:auto;">
+        <div class="card mx-auto"  style="width:500px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3" style="background-color:black;">
+                        <img  style="border-radius: 50%; height:80px; width:80px;padding:7px" src="{{user.profile.image.url}}" alt="Card image"/>
+                    </div>
+                    <div class="col-sm-9 pt-2" style="background-color:black;">
+                        <p>
+                            <span class="h4 font-weight-bold">{{user.username}}</span><br>
+                            <span class = "text-muted">{{user.email}}</span>
+                        </p>
+                    </div>
+                    <!--<div class="media" style="background-color:black;">
+                        <img class="rounded-circle account-img" src="{{user.profile.image.url}}" alt="Card image"/>
+                        <div class="media_body">
+                            <span class="h4 font-weight-bold">{{user.username}}</span><br>
+                            <span class = "text-muted">{{user.email}}</span>
+                        </div>
+                    </div>-->
+                </div>
+            </div>      
+            <div class="card-body text-dark">
+                <p>
+                    {{user.profile.bio}}
+                </p>
+            </div>      
+        </div>
+        <legend class="container mt-3" style="text-align: center;">My Blogs</legend>
+        {% if user.post_set.all %}
+            {% for post in user.post_set.all %}
+                <div class="card mx-auto mt-4"  style="width:500px">
+                    <div class="px-3" style="background-color:black;">
+                            <span class = "text-muted">Dated {{post.date|date:"F d, Y"}}</span>
+                    </div>            
+                    <div class="card-body text-dark">
+                        {% if post.title %}
+                            <div class="card-title h5 font-weight-bold">{{post.title}}</div>
+                        {% endif %}
+                        <p class="card-text">
+                            {{post.content}}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="text-muted" style="text-align: center;">--No blogs yet--</div>
+        {% endif %}
+    </div>
 {% endblock body1 %}
