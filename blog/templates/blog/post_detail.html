@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+{% block body1 %}
+    <div style="margin:10px;padding:auto;">
+        <div class="card mx-auto"  style="width:500px">
+            <div class="container">
+                <div class="row">
+                <div class="col-sm-3" style="background-color:black;">
+                    <img class="card-img-top rounded-circle"  style="border-radius: 50%; height:80px; width:80px;padding:7px" src="{{object.author.profile.image.url}}" alt="Card image"/>
+                </div>
+                <div class="col-sm-9" style="background-color:black;">
+                    <p>
+                        <span class="h4 font-weight-bold">{{object.author}}</span><br>
+                        <span class = "text-muted">Dated {{object.date|date:"F d, Y"}}</span>
+                    </p>
+                </div>
+                </div>
+            </div>            
+            <div class="card-body text-dark">
+                {% if object.title %}
+                    <div class="card-title h5 font-weight-bold">{{object.title}}</div>
+                {% endif %}
+                <p class="card-text">
+                    {{object.content}}
+                </p>
+                {% if object.author == user %}
+                <a class="btn btn-sm btn-secondary  mt-1 mb-1" href="{% url 'post_update' object.id %}">Update</a>
+                <a class="btn btn-sm btn-danger  mt-1 mb-1"  href="{% url 'post_delete' object.id %}">Delete</a>
+            {% endif %}
+            </div>
+            
+        </div>
+    </div>
+{% endblock body1 %}

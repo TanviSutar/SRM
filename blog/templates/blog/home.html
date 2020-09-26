@@ -10,7 +10,8 @@
                     </div>
                     <div class="col-sm-9" style="background-color:black;">
                         <p>
-                            <span class="h4 font-weight-bold">{{post.author}}</span><br>
+                            <span class="h4 font-weight-bold">
+                                <a href="#">{{post.author}}</a></span><br>
                             <span class = "text-muted">Dated {{post.date|date:"F d, Y"}}</span>
                         </p>
                     </div>
@@ -18,7 +19,8 @@
                 </div>            
                 <div class="card-body text-dark">
                     {% if post.title %}
-                        <div class="card-title h5 font-weight-bold">{{post.title}}</div>
+                        <div class="card-title h5 font-weight-bold">
+                            <a href="{% url 'post_detail' post.id %}">{{post.title}}</a></div>
                     {% endif %}
                     <p class="card-text">
                         {{post.content}}

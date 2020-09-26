@@ -20,6 +20,7 @@
                 <p>
                     {{user.profile.bio}}
                 </p>
+                <!--Profile update form-->
                 <legend>Profile Info</legend>
                 <form method='POST' enctype="multipart/form-data">
                     {% csrf_token %}
@@ -34,7 +35,7 @@
             </div>      
         </div>
 
-
+        <!--User's posts-->
         <legend class="container mt-3" style="text-align: center;">My Blogs</legend>
         {% if user.post_set.all %}
             {% for post in user.post_set.all %}
