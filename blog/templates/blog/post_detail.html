@@ -9,7 +9,9 @@
                 </div>
                 <div class="col-sm-9" style="background-color:black;">
                     <p>
-                        <span class="h4 font-weight-bold">{{object.author}}</span><br>
+                        <span class="h4 font-weight-bold">
+                            <a href="{% url 'user_posts' object.author.username %}">{{object.author}}</a>
+                        </span><br>
                         <span class = "text-muted">Dated {{object.date|date:"F d, Y"}}</span>
                     </p>
                 </div>

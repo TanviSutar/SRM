@@ -35,7 +35,7 @@
             </div>      
         </div>
 
-        <!--User's posts-->
+        <!--User's posts
         <legend class="container mt-3" style="text-align: center;">My Blogs</legend>
         {% if user.post_set.all %}
             {% for post in user.post_set.all %}
@@ -55,6 +55,6 @@
             {% endfor %}
         {% else %}
             <div class="text-muted" style="text-align: center;">--No blogs yet--</div>
-        {% endif %}
+        {% endif %}-->
     </div>
 {% endblock body1 %}

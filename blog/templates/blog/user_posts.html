@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {% block body1 %}
+    <h3 class="mb-4" style="text-align: center;">Posts by {{view.kwargs.username}} ({{page_obj.paginator.count}})</h3>
     {% for post in posts %}
         <div style="margin:10px;padding:auto;">
             <div class="card mx-auto"  style="width:500px">
@@ -11,7 +12,8 @@
                     <div class="col-sm-9" style="background-color:black;">
                         <p>
                             <span class="h4 font-weight-bold">
-                                <a href="{% url 'user_posts' post.author.username %}">{{post.author}}</a></span><br>
+                                <a href="{% url 'user_posts' post.author.username %}">{{post.author}}</a>
+                            </span><br>
                             <span class = "text-muted">Dated {{post.date|date:"F d, Y"}}</span>
                         </p>
                     </div>
