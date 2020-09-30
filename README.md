@@ -1,4 +1,4 @@
-# SRM
+# Blog Website
 This is a simple blogging website.
 Allows user to write and publish blogs. 
 
