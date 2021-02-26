@@ -18,10 +18,10 @@ Some sneak-peek of the web-app:
 
 ![ss4](https://user-images.githubusercontent.com/46374463/109265542-b7a6fb00-782c-11eb-8645-1b2ee35c885f.png)
 
+![ss8](https://user-images.githubusercontent.com/46374463/109265559-bfff3600-782c-11eb-8fb3-3c9ae6f2d507.png)
+
 ![ss5](https://user-images.githubusercontent.com/46374463/109265547-baa1eb80-782c-11eb-9d59-54f1e43738ab.png)
 
 ![ss6](https://user-images.githubusercontent.com/46374463/109265552-bd044580-782c-11eb-9eda-eb231f630541.png)
-
-![ss8](https://user-images.githubusercontent.com/46374463/109265559-bfff3600-782c-11eb-8fb3-3c9ae6f2d507.png)
 
 ![ss7](https://user-images.githubusercontent.com/46374463/109265567-c2fa2680-782c-11eb-8be5-0267c4613be5.png)
